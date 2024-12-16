@@ -27,6 +27,8 @@ resource "aws_instance" "web" {
 
   key_name                    = aws_key_pair.key.key_name
 
+  user_data = file("scripts/extra.sh")
+
   tags = merge(
     var.aws_common_tags,
     {
