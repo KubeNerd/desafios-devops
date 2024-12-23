@@ -27,3 +27,13 @@ spec:
             memory: "50Mi"
         ports:
         - containerPort: 3000
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
