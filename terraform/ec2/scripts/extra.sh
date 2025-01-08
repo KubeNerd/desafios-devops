@@ -17,9 +17,11 @@ echo \
 
 sudo apt-get update -y
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-
+sudo usermod -aG docker ubuntu
 sudo systemctl start docker
 sudo systemctl enable docker
+
+
 
 sudo docker run -d --name apache-server -p 80:80 httpd:latest
 
